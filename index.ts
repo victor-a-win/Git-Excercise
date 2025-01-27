@@ -1,2 +1,2 @@
-let massage: string = "hello world";
-console.log(massage);
+let message: string = "hello world";
+console.log(message);
