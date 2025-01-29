@@ -1,3 +1,4 @@
+// Exercise_3:Git&GitHub
 // 1. Code to Display Multiplication Table of a Given Integer
 const number_1: number = 9;
 for (let i = 1; i <= 10; i++) {
