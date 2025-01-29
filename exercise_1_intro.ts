@@ -1,0 +1,149 @@
+// Exercise-1:Intro_with_Pseudo_Code
+
+// Code-1
+/*
+PROBLEM
+LUAS AREA PERSEGI PANJANG
+FORMULA = LENGTH * WIDTH
+
+PROBLEM BREAKDOWN
+A. DEFINE OF LENGTH AND WIDTH
+HINT:
+LENGTH > WIDTH
+SOLUTION
+MAKING 2 VARIABLE WITH LET SYNTAX AND 1 VARIABLE FOR AREA CALCULATION 
+*/
+
+let length_1: number = 5;
+let width_1: number = 3;
+const area_1: number = length_1 * width_1;
+
+console.log(area_1);
+
+
+// Code-2
+/*
+PROBLEM
+KELILING PERSEGI PANJANG
+FORMULA = 2 * (LENGTH + WIDTH)
+
+PROBLEM BREAKDOWN
+A. DEFINE OF LENGTH AND WIDTH
+HINT:
+LENGTH > WIDTH
+SOLUTION
+MAKING 2 VARIABLE WITH LET SYNTAX AND 1 VARIABLE FOR PERIMETER CALCULATION
+*/
+
+let length_2: number = 5;
+let width_2: number = 3;
+const perimeter_1: number = 2 * (length_2 + width_2);
+
+console.log(perimeter_1);
+
+
+// Code-3
+/*
+PROBLEM
+MENCARI DIAMETER (d), KELILING (perimeter_2) DAN LUAS AREA (area_2) LINGKARAN DARI INFORMASI RADIUS (r) SAJA
+FORMULA d = 2 * r
+FORMULA perimeter_2 = 2 * phi * r
+FORMULA area_2 = phi * r * r
+
+PROBLEM BREAKDOWN
+A. DEFINE OF r and phi
+HINT:
+Using Math.PI to return phi value 
+SOLUTION
+MAKING 2 VARIABLE WITH LET SYNTAX AND 2 CONSTANT VARIABLE FOR PERIMETER CALCULATION
+
+B. ROUNDING SMALL DIGIT OF DESIMAL VALUE
+HINT:
+USING toFixed METHOD
+SOLUTION
+MAKING THE OTHERS VARIABLES FOR ROUNDED DECIMAL NUMBER OF PERIMETER (4 DIGIT BEHIND ,) AND AREA (3 DIGIT BEHIND ,)
+SINCE toFixed METHOD  RETURN A STRING, CONVERTING IT TO A NUMBER WITH parseFloat() IS NECESSARY FOR FURTHER NUMERICAL OPERATION
+*/
+
+let r: number = 5;
+let d: number = r * 2;
+const perimeter_2: number = 2 * Math.PI * r;
+const area_2: number = Math.PI * Math.pow(r, 2);
+const perimeter_Rounded = parseFloat(perimeter_2.toFixed(4)); 
+const area_Rounded = parseFloat (area_2.toFixed(3)); 
+
+console.log("diameter = " + d + ", circumference = " + perimeter_Rounded + ", area = " + area_Rounded);
+
+
+// Code-4
+/*
+PROBLEM
+KONVERSI DARI HARI KE TAHUN BULAN TANGGAL
+CONTOH: 400 HARI = 1 TAHUN 1 BULAN 5 HARI
+*/
+
+//NOTES
+// 1. 1 TAHUN = 365 HARI
+// 2. 1 BULAN = 30 HARI
+
+/* PROBLEM BREAKDOWN
+A. KONVERSI DARI TOTAL HARI MENJADI TAHUN
+HINT: 
+1. 400 HARI ADA 1 TAHUN
+SOLUSI
+1. 400 HARI DIBAGI 1 TAHUN (365 HARI) DIBULATKAN KE BAWAH
+
+B. KONVERSI DARI SISA HARI YANG SUDAH DIAMBIL TAHUN MENJADI BULAN
+HINT
+1. SISA HARI SETELAH DIKURANG OLEH 1 TAHUN (365) ADALAH 35
+2. 35 HARI ADA 1 BULAN
+SOLUSI
+1. 400 HARI DIMODULO 1 TAHUN (365 HARI) UNTUK MENDAPATKAN 35 HARI
+2. 35 HARI DIBAGI DENGAN 1 BULAN (30 HARI) DIBULATKAN KE BAWAH
+
+C. KONVERSI SISA HARI YANG SUDAH DIAMBUL TAHUN DAN BULAN MENJADI HARI
+HINT
+1. SISA HARI SETELAH DIKURANGI SATU TAHUN DAN SATU BULAN ADALAH 5 HARI
+SOLUSI
+1. 400 HARI DIMODULO 1 TAHUN (365 HARI) KEMUDIAN DIMODULO 1 BULAN (30 HARI)
+*/
+
+const days: number = 400;
+
+const year: number = Math.floor(days / 365);
+console.log(year);
+
+const month: number = Math.floor((days % 365) / 30);
+console.log(month);
+
+const day: number = (days % 365) % 30;
+console.log(day);
+
+
+// Code-5
+/*
+PROBLEM
+MENCARI SELISIH 2 DARI TANGGAL (LENGKAP DENGAN TAHUN, BULAN DAN HARI)
+DEVIATION OF DATE = date$2 - date$1
+
+PROBLEM BREAKDOWN
+A. DEFINE THE TWO VARIABLES OF DATES
+HINT:
+USING Date DATA TYPES
+OUTPUT ONLY INTEGER OF DAYS' SUM 
+date$2 > date$1
+SOLUTION
+MAKING 2 VARIABLE WITH LET SYNTAX, MOREOVER USING parseInt TO SHOW INTEGER VALUE OF DAYS
+DEVIATION RESULT IN MILISECONDS is converted to days ()
+*/
+
+let date1: Date = new Date("2022-01-20");
+console.log(date1);
+let date2: Date = new Date("2022-01-22");
+console.log(date2);
+
+const dev_Date: number = (date2 - date1);
+console.log(dev_Date);
+
+const dev_Date_cvt: number = (dev_Date / (8.64 * Math.pow(10, 7)));
+console.log(dev_Date_cvt); 
